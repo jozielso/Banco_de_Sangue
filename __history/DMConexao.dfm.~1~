@@ -1,0 +1,5 @@
+object Conexao: TConexao
+  OldCreateOrder = False
+  Height = 439
+  Width = 652
+end
