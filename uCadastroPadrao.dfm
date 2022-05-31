@@ -32,6 +32,7 @@ object fCadastroPadrao: TfCadastroPadrao
       Height = 41
       Caption = 'Incluir'
       TabOrder = 0
+      OnClick = btnIncluirClick
     end
     object btnAlterar: TButton
       Left = 154
@@ -40,6 +41,7 @@ object fCadastroPadrao: TfCadastroPadrao
       Height = 41
       Caption = 'Alterar'
       TabOrder = 1
+      OnClick = btnAlterarClick
     end
     object btnSalvar: TButton
       Left = 289
@@ -48,6 +50,7 @@ object fCadastroPadrao: TfCadastroPadrao
       Height = 41
       Caption = 'Salvar'
       TabOrder = 2
+      OnClick = btnSalvarClick
     end
     object btnCancelar: TButton
       Left = 440
@@ -56,6 +59,7 @@ object fCadastroPadrao: TfCadastroPadrao
       Height = 41
       Caption = 'Cancelar'
       TabOrder = 3
+      OnClick = btnCancelarClick
     end
     object btnSair: TButton
       Left = 592
@@ -64,6 +68,7 @@ object fCadastroPadrao: TfCadastroPadrao
       Height = 41
       Caption = 'Sair'
       TabOrder = 4
+      OnClick = btnSairClick
     end
   end
   object PanelPrincipal: TPanel
@@ -107,5 +112,9 @@ object fCadastroPadrao: TfCadastroPadrao
         ImageIndex = 1
       end
     end
+  end
+  object DataSourcePadrao: TDataSource
+    Left = 293
+    Top = 169
   end
 end
