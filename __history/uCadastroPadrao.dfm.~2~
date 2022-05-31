@@ -1,0 +1,28 @@
+object fCadastroPadrao: TfCadastroPadrao
+  Left = 0
+  Top = 0
+  Caption = 'fCadastroPadrao'
+  ClientHeight = 478
+  ClientWidth = 737
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object PanelBotoes: TPanel
+    Left = 0
+    Top = 437
+    Width = 737
+    Height = 41
+    Align = alBottom
+    Caption = 'PanelBotoes'
+    TabOrder = 0
+    ExplicitLeft = 40
+    ExplicitTop = 64
+    ExplicitWidth = 185
+  end
+end

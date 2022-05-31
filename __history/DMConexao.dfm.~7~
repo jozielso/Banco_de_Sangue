@@ -3,7 +3,6 @@ object Conexao: TConexao
   Height = 465
   Width = 674
   object ADOConnection: TADOConnection
-    Connected = True
     ConnectionString = 
       'Provider=SQLNCLI11.1;Persist Security Info=False;User ID=bs;pass' +
       'word=123456;Initial Catalog=BS;Data Source=JOZIEL_NOT\JSO;Initia' +
@@ -14,7 +13,6 @@ object Conexao: TConexao
     Top = 40
   end
   object ADOQuery: TADOQuery
-    Active = True
     Connection = ADOConnection
     CursorType = ctStatic
     Parameters = <>

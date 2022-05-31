@@ -12,7 +12,7 @@ type
   TConexao = class(TDataModule)
     ADOConnection: TADOConnection;
     ADOQuery: TADOQuery;
-    DataSource: TDataSource;
+    DataSource1: TDataSource;
   private
     { Private declarations }
   public

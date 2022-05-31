@@ -5,16 +5,14 @@ object Conexao: TConexao
   object ADOConnection: TADOConnection
     Connected = True
     ConnectionString = 
-      'Provider=SQLNCLI11.1;Persist Security Info=False;User ID=bs;pass' +
-      'word=123456;Initial Catalog=BS;Data Source=JOZIEL_NOT\JSO;Initia' +
-      'l File Name="";Server SPN="";'
-    LoginPrompt = False
+      'Provider=SQLNCLI11.1;Persist Security Info=False;User ID=sa;Init' +
+      'ial Catalog=BS;Data Source=JOZIEL_NOT\JSO;Initial File Name="";S' +
+      'erver SPN=""'
     Provider = 'SQLNCLI11.1'
     Left = 112
     Top = 40
   end
   object ADOQuery: TADOQuery
-    Active = True
     Connection = ADOConnection
     CursorType = ctStatic
     Parameters = <>
@@ -23,7 +21,7 @@ object Conexao: TConexao
     Left = 216
     Top = 40
   end
-  object DataSource: TDataSource
+  object DataSource1: TDataSource
     DataSet = ADOQuery
     Left = 304
     Top = 40

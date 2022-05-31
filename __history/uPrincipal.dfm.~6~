@@ -26,48 +26,6 @@ object fPrincipal: TfPrincipal
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
-    Columns = <
-      item
-        Expanded = False
-        FieldName = 'PES_ID'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'PES_NOME'
-        Width = 188
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'PES_DATANASC'
-        Width = 97
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'PES_TIPOSANG'
-        Width = 83
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'PES_EMAIL'
-        Width = 118
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'PES_CELULAR'
-        Width = 101
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'PES_CPF'
-        Width = 117
-        Visible = True
-      end>
   end
   object MainMenu1: TMainMenu
     Left = 24

@@ -10,9 +10,10 @@ uses
 
 type
   TConexao = class(TDataModule)
+    SQLConnection1: TSQLConnection;
+    FDConnection1: TFDConnection;
     ADOConnection: TADOConnection;
     ADOQuery: TADOQuery;
-    DataSource: TDataSource;
   private
     { Private declarations }
   public
