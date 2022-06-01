@@ -1,0 +1,17 @@
+inherited fCadastroPessoa: TfCadastroPessoa
+  Caption = 'Cadastro de Pessoas'
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited DataSourcePadrao: TDataSource
+    DataSet = ADOQueryPessoa
+  end
+  object ADOQueryPessoa: TADOQuery
+    Connection = Conexao.ADOConnection
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'SELECT * FROM BS_PESSOA')
+    Left = 445
+    Top = 169
+  end
+end

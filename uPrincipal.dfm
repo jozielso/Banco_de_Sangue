@@ -12,63 +12,10 @@ object fPrincipal: TfPrincipal
   Font.Style = []
   Menu = MainMenu1
   OldCreateOrder = False
+  WindowState = wsMaximized
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object DBGrid1: TDBGrid
-    Left = 8
-    Top = 112
-    Width = 713
-    Height = 353
-    DataSource = Conexao.DataSource
-    TabOrder = 0
-    TitleFont.Charset = DEFAULT_CHARSET
-    TitleFont.Color = clWindowText
-    TitleFont.Height = -11
-    TitleFont.Name = 'Tahoma'
-    TitleFont.Style = []
-    Columns = <
-      item
-        Expanded = False
-        FieldName = 'PES_ID'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'PES_NOME'
-        Width = 188
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'PES_DATANASC'
-        Width = 97
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'PES_TIPOSANG'
-        Width = 83
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'PES_EMAIL'
-        Width = 118
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'PES_CELULAR'
-        Width = 101
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'PES_CPF'
-        Width = 117
-        Visible = True
-      end>
-  end
   object MainMenu1: TMainMenu
     Left = 24
     Top = 16
@@ -76,12 +23,14 @@ object fPrincipal: TfPrincipal
       Caption = 'Sistema'
       object smSair: TMenuItem
         Caption = 'Sair'
+        OnClick = smSairClick
       end
     end
     object mArquivo: TMenuItem
       Caption = 'Arquivo'
       object smPessoa: TMenuItem
         Caption = 'Pessoa'
+        OnClick = smPessoaClick
       end
     end
     object mProcesso: TMenuItem

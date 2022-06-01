@@ -42,6 +42,8 @@ implementation
 
 {$R *.dfm}
 
+uses DMConexao;
+
 procedure TfCadastroPadrao.btnAlterarClick(Sender: TObject);
 begin
   pComportamentoBotao('A');

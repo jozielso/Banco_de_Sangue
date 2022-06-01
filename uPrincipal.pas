@@ -18,7 +18,9 @@ type
     smDoacao: TMenuItem;
     mRelatorio: TMenuItem;
     smrDoacao: TMenuItem;
-    DBGrid1: TDBGrid;
+    procedure smPessoaClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure smSairClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -32,6 +34,24 @@ implementation
 
 {$R *.dfm}
 
-uses DMConexao;
+uses DMConexao, uCadastroPessoa;
+
+procedure TfPrincipal.FormShow(Sender: TObject);
+begin
+  DMConexao.Conexao.ADOConnection.Open;
+end;
+
+procedure TfPrincipal.smPessoaClick(Sender: TObject);
+begin
+    if TfCadastroPessoa(Application.FindComponent('fCadastroPessoa')) = nil then
+     fCadastroPessoa := TfCadastroPessoa.Create(Application);
+     fCadastroPessoa.ShowModal;
+     FreeAndNil(fCadastroPessoa);
+end;
+
+procedure TfPrincipal.smSairClick(Sender: TObject);
+begin
+  Close;
+end;
 
 end.

@@ -2,14 +2,17 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2022/05/29 22:24:37.000.188,=C:\Users\jozie\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2022/05/29 22:26:20.000.720,C:\Users\jozie\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\jozie\Google Drive\Projetos\Banco_de_Sangue\uPrincipal.dfm</Transaction>
-    <Transaction>2022/05/29 22:26:20.000.719,C:\Users\jozie\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\jozie\Google Drive\Projetos\Banco_de_Sangue\uPrincipal.pas</Transaction>
-    <Transaction>2022/05/29 22:29:11.000.961,C:\Users\jozie\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\jozie\Google Drive\Projetos\Banco_de_Sangue\BancoDeSangue.dproj</Transaction>
-    <Transaction>2022/05/30 20:13:05.128,=C:\Users\jozie\Google Drive\Projetos\Banco_de_Sangue\Unit1.pas</Transaction>
-    <Transaction>2022/05/30 20:16:25.911,C:\Users\jozie\Google Drive\Projetos\Banco_de_Sangue\DMConexao.pas=C:\Users\jozie\Google Drive\Projetos\Banco_de_Sangue\Unit1.pas</Transaction>
-    <Transaction>2022/05/30 20:16:25.911,C:\Users\jozie\Google Drive\Projetos\Banco_de_Sangue\DMConexao.dfm=C:\Users\jozie\Google Drive\Projetos\Banco_de_Sangue\Unit1.dfm</Transaction>
-    <Transaction>2022/05/30 21:43:56.827,=C:\Users\jozie\Google Drive\Projetos\Banco_de_Sangue\Unit1.pas</Transaction>
-    <Transaction>2022/05/30 21:45:12.255,C:\Users\jozie\Google Drive\Projetos\Banco_de_Sangue\uCadastroPadrao.pas=C:\Users\jozie\Google Drive\Projetos\Banco_de_Sangue\Unit1.pas</Transaction>
-    <Transaction>2022/05/30 21:45:12.255,C:\Users\jozie\Google Drive\Projetos\Banco_de_Sangue\uCadastroPadrao.dfm=C:\Users\jozie\Google Drive\Projetos\Banco_de_Sangue\Unit1.dfm</Transaction>
+    <Transaction>2022/05/29 22:26:20.000.720,C:\Users\jozie\Google Drive\Projetos\Banco_de_Sangue\uPrincipal.dfm=C:\Users\jozie\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/05/29 22:26:20.000.719,C:\Users\jozie\Google Drive\Projetos\Banco_de_Sangue\uPrincipal.pas=C:\Users\jozie\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/05/29 22:29:11.000.961,C:\Users\jozie\Google Drive\Projetos\Banco_de_Sangue\BancoDeSangue.dproj=C:\Users\jozie\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2022/05/30 20:13:05.000.128,=C:\Users\jozie\Google Drive\Projetos\Banco_de_Sangue\Unit1.pas</Transaction>
+    <Transaction>2022/05/30 20:16:25.000.911,C:\Users\jozie\Google Drive\Projetos\Banco_de_Sangue\Unit1.pas=C:\Users\jozie\Google Drive\Projetos\Banco_de_Sangue\DMConexao.pas</Transaction>
+    <Transaction>2022/05/30 20:16:25.000.911,C:\Users\jozie\Google Drive\Projetos\Banco_de_Sangue\Unit1.dfm=C:\Users\jozie\Google Drive\Projetos\Banco_de_Sangue\DMConexao.dfm</Transaction>
+    <Transaction>2022/05/30 21:43:56.000.827,=C:\Users\jozie\Google Drive\Projetos\Banco_de_Sangue\Unit1.pas</Transaction>
+    <Transaction>2022/05/30 21:45:12.000.255,C:\Users\jozie\Google Drive\Projetos\Banco_de_Sangue\Unit1.dfm=C:\Users\jozie\Google Drive\Projetos\Banco_de_Sangue\uCadastroPadrao.dfm</Transaction>
+    <Transaction>2022/05/30 21:45:12.000.255,C:\Users\jozie\Google Drive\Projetos\Banco_de_Sangue\Unit1.pas=C:\Users\jozie\Google Drive\Projetos\Banco_de_Sangue\uCadastroPadrao.pas</Transaction>
+    <Transaction>2022/05/31 20:24:33.099,=C:\Users\jozie\Google Drive\Projetos\Banco_de_Sangue\Unit1.pas</Transaction>
+    <Transaction>2022/05/31 20:31:25.187,C:\Users\jozie\Google Drive\Projetos\Banco_de_Sangue\uCadastroPessoa.dfm=C:\Users\jozie\Google Drive\Projetos\Banco_de_Sangue\Unit1.dfm</Transaction>
+    <Transaction>2022/05/31 20:31:25.187,C:\Users\jozie\Google Drive\Projetos\Banco_de_Sangue\uCadastroPessoa.pas=C:\Users\jozie\Google Drive\Projetos\Banco_de_Sangue\Unit1.pas</Transaction>
   </Transactions>
 </BorlandProject>

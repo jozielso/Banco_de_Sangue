@@ -1,0 +1,45 @@
+unit uPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Data.DB, Vcl.Grids,
+  Vcl.DBGrids;
+
+type
+  TfPrincipal = class(TForm)
+    MainMenu1: TMainMenu;
+    mSistema: TMenuItem;
+    smSair: TMenuItem;
+    mArquivo: TMenuItem;
+    smPessoa: TMenuItem;
+    mProcesso: TMenuItem;
+    smDoacao: TMenuItem;
+    mRelatorio: TMenuItem;
+    smrDoacao: TMenuItem;
+    procedure smPessoaClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  fPrincipal: TfPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+uses DMConexao;
+
+procedure TfPrincipal.smPessoaClick(Sender: TObject);
+begin
+    if TfPrincipal(Application.FindComponent('fCadastroPessoa')) = nil then
+     fPrincipal := TfPrincipal.Create(Application);
+     fPrincipal.ShowModal;
+     FreeAndNil(fPrincipal);
+end;
+
+end.

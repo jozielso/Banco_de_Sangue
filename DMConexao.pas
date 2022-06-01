@@ -11,8 +11,6 @@ uses
 type
   TConexao = class(TDataModule)
     ADOConnection: TADOConnection;
-    ADOQuery: TADOQuery;
-    DataSource: TDataSource;
   private
     { Private declarations }
   public

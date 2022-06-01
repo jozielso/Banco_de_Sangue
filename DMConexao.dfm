@@ -13,19 +13,4 @@ object Conexao: TConexao
     Left = 112
     Top = 40
   end
-  object ADOQuery: TADOQuery
-    Active = True
-    Connection = ADOConnection
-    CursorType = ctStatic
-    Parameters = <>
-    SQL.Strings = (
-      'SELECT * FROM BS_PESSOA')
-    Left = 216
-    Top = 40
-  end
-  object DataSource: TDataSource
-    DataSet = ADOQuery
-    Left = 304
-    Top = 40
-  end
 end

@@ -1,0 +1,26 @@
+unit uCadastroPessoa;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uCadastroPadrao, Data.DB, Vcl.Grids,
+  Vcl.DBGrids, Vcl.ComCtrls, Vcl.StdCtrls, Vcl.ExtCtrls, Data.Win.ADODB;
+
+type
+  TfCadastroPessoa = class(TfCadastroPadrao)
+    ADOQueryPessoa: TADOQuery;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  fCadastroPessoa: TfCadastroPessoa;
+
+implementation
+
+{$R *.dfm}
+
+end.

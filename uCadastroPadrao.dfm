@@ -23,8 +23,6 @@ object fCadastroPadrao: TfCadastroPadrao
     Height = 54
     Align = alBottom
     TabOrder = 0
-    ExplicitTop = 424
-    ExplicitWidth = 737
     object btnIncluir: TButton
       Left = 16
       Top = 5
@@ -78,10 +76,6 @@ object fCadastroPadrao: TfCadastroPadrao
     Height = 434
     Align = alClient
     TabOrder = 1
-    ExplicitLeft = 88
-    ExplicitTop = 88
-    ExplicitWidth = 185
-    ExplicitHeight = 41
     object PagePrincipal: TPageControl
       Left = 1
       Top = 1
@@ -90,8 +84,6 @@ object fCadastroPadrao: TfCadastroPadrao
       ActivePage = TabSheetGrid
       Align = alClient
       TabOrder = 0
-      ExplicitWidth = 735
-      ExplicitHeight = 422
       object TabSheetGrid: TTabSheet
         Caption = 'Listagem'
         object DBGrid1: TDBGrid
@@ -100,6 +92,7 @@ object fCadastroPadrao: TfCadastroPadrao
           Width = 737
           Height = 404
           Align = alClient
+          DataSource = DataSourcePadrao
           TabOrder = 0
           TitleFont.Charset = DEFAULT_CHARSET
           TitleFont.Color = clWindowText
