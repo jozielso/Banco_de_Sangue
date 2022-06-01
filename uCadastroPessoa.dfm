@@ -1,77 +1,78 @@
 inherited fCadastroPessoa: TfCadastroPessoa
   Caption = 'Cadastro de Pessoas'
+  Position = poScreenCenter
   PixelsPerInch = 96
   TextHeight = 13
   inherited PanelPrincipal: TPanel
     inherited PagePrincipal: TPageControl
-      ActivePage = TabSheetCampos
       inherited TabSheetCampos: TTabSheet
         object Label1: TLabel
           Left = 49
           Top = 56
-          Width = 35
+          Width = 10
           Height = 13
-          Caption = 'PES_ID'
-          FocusControl = DBEdit1
+          Caption = 'Id'
+          FocusControl = EDId
         end
         object Label2: TLabel
           Left = 49
           Top = 96
-          Width = 53
+          Width = 64
           Height = 13
-          Caption = 'PES_NOME'
-          FocusControl = DBEdit2
+          Caption = 'Nome Pessoa'
+          FocusControl = EDNomePessoa
         end
         object Label3: TLabel
           Left = 49
           Top = 136
-          Width = 78
+          Width = 81
           Height = 13
-          Caption = 'PES_DATANASC'
-          FocusControl = DBEdit3
+          Caption = 'Data Nascimento'
+          FocusControl = EDNascimento
         end
         object Label4: TLabel
           Left = 49
           Top = 176
-          Width = 75
+          Width = 73
           Height = 13
-          Caption = 'PES_TIPOSANG'
-          FocusControl = DBEdit4
+          Caption = 'Tipo Sangu'#237'neo'
+          FocusControl = EDTipoSanguineo
         end
         object Label5: TLabel
           Left = 49
           Top = 216
-          Width = 54
+          Width = 24
           Height = 13
-          Caption = 'PES_EMAIL'
-          FocusControl = DBEdit5
+          Caption = 'Email'
+          FocusControl = EDEmail
         end
         object Label6: TLabel
           Left = 49
           Top = 256
-          Width = 68
+          Width = 33
           Height = 13
-          Caption = 'PES_CELULAR'
-          FocusControl = DBEdit6
+          Caption = 'Celular'
+          FocusControl = EDCelular
         end
         object Label7: TLabel
           Left = 49
           Top = 296
-          Width = 43
+          Width = 17
           Height = 13
-          Caption = 'PES_CPF'
-          FocusControl = DBEdit7
+          Caption = 'Cpf'
+          FocusControl = EDCpf
         end
-        object DBEdit1: TDBEdit
+        object EDId: TDBEdit
           Left = 49
           Top = 72
           Width = 134
           Height = 21
           DataField = 'PES_ID'
           DataSource = DataSourcePadrao
+          Enabled = False
           TabOrder = 0
         end
-        object DBEdit2: TDBEdit
+        object EDNomePessoa: TDBEdit
           Left = 49
           Top = 112
           Width = 1213
@@ -80,16 +81,16 @@ inherited fCadastroPessoa: TfCadastroPessoa
           DataSource = DataSourcePadrao
           TabOrder = 1
         end
-        object DBEdit3: TDBEdit
+        object EDNascimento: TDBEdit
           Left = 49
-          Top = 152
+          Top = 149
           Width = 238
           Height = 21
           DataField = 'PES_DATANASC'
           DataSource = DataSourcePadrao
           TabOrder = 2
         end
-        object DBEdit4: TDBEdit
+        object EDTipoSanguineo: TDBEdit
           Left = 49
           Top = 192
           Width = 30
@@ -98,7 +99,7 @@ inherited fCadastroPessoa: TfCadastroPessoa
           DataSource = DataSourcePadrao
           TabOrder = 3
         end
-        object DBEdit5: TDBEdit
+        object EDEmail: TDBEdit
           Left = 49
           Top = 232
           Width = 1213
@@ -107,7 +108,7 @@ inherited fCadastroPessoa: TfCadastroPessoa
           DataSource = DataSourcePadrao
           TabOrder = 4
         end
-        object DBEdit6: TDBEdit
+        object EDCelular: TDBEdit
           Left = 49
           Top = 272
           Width = 1213
@@ -116,7 +117,7 @@ inherited fCadastroPessoa: TfCadastroPessoa
           DataSource = DataSourcePadrao
           TabOrder = 5
         end
-        object DBEdit7: TDBEdit
+        object EDCpf: TDBEdit
           Left = 49
           Top = 312
           Width = 1213
@@ -140,7 +141,7 @@ inherited fCadastroPessoa: TfCadastroPessoa
     SQL.Strings = (
       'SELECT * FROM BS_PESSOA')
     Left = 533
-    Top = 57
+    Top = 49
     object ADOQueryPessoaPES_ID: TAutoIncField
       FieldName = 'PES_ID'
       ReadOnly = True
