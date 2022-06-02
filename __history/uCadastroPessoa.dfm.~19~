@@ -5,6 +5,7 @@ inherited fCadastroPessoa: TfCadastroPessoa
   TextHeight = 13
   inherited PanelPrincipal: TPanel
     inherited PagePrincipal: TPageControl
+      ActivePage = TabSheetCampos
       inherited TabSheetCampos: TTabSheet
         object Label1: TLabel
           Left = 49
@@ -75,11 +76,13 @@ inherited fCadastroPessoa: TfCadastroPessoa
         object EDNomePessoa: TDBEdit
           Left = 49
           Top = 112
-          Width = 1213
+          Width = 400
           Height = 21
+          AutoSize = False
           DataField = 'PES_NOME'
           DataSource = DataSourcePadrao
           TabOrder = 1
+          OnExit = EDNomePessoaExit
         end
         object EDNascimento: TDBEdit
           Left = 49
@@ -89,6 +92,7 @@ inherited fCadastroPessoa: TfCadastroPessoa
           DataField = 'PES_DATANASC'
           DataSource = DataSourcePadrao
           TabOrder = 2
+          OnExit = EDNascimentoExit
         end
         object EDTipoSanguineo: TDBEdit
           Left = 49
@@ -98,33 +102,55 @@ inherited fCadastroPessoa: TfCadastroPessoa
           DataField = 'PES_TIPOSANG'
           DataSource = DataSourcePadrao
           TabOrder = 3
+          OnExit = EDTipoSanguineoExit
         end
         object EDEmail: TDBEdit
           Left = 49
           Top = 232
-          Width = 1213
+          Width = 400
           Height = 21
+          AutoSize = False
           DataField = 'PES_EMAIL'
           DataSource = DataSourcePadrao
           TabOrder = 4
+          OnExit = EDEmailExit
         end
         object EDCelular: TDBEdit
           Left = 49
           Top = 272
-          Width = 1213
+          Width = 400
           Height = 21
+          AutoSize = False
           DataField = 'PES_CELULAR'
           DataSource = DataSourcePadrao
           TabOrder = 5
+          OnExit = EDCelularExit
         end
         object EDCpf: TDBEdit
           Left = 49
           Top = 312
-          Width = 1213
+          Width = 400
           Height = 21
+          AutoSize = False
           DataField = 'PES_CPF'
           DataSource = DataSourcePadrao
           TabOrder = 6
+          OnExit = EDCpfExit
+        end
+        object DPNascimento: TDatePicker
+          Left = 293
+          Top = 148
+          Width = 196
+          Height = 23
+          Date = 44713.000000000000000000
+          DateFormat = 'dd/MM/yyyy'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          TabOrder = 7
+          OnChange = DPNascimentoChange
         end
       end
     end
@@ -170,5 +196,33 @@ inherited fCadastroPessoa: TfCadastroPessoa
       FieldName = 'PES_CPF'
       Size = 100
     end
+  end
+  object ADOQueryTmp: TADOQuery
+    Connection = Conexao.ADOConnection
+    Parameters = <
+      item
+        Name = 'NOME'
+        Attributes = [paNullable]
+        DataType = ftString
+        NumericScale = 255
+        Precision = 255
+        Size = 100
+        Value = Null
+      end
+      item
+        Name = 'NASCIMENTO'
+        Attributes = [paNullable]
+        DataType = ftDateTime
+        NumericScale = 3
+        Precision = 23
+        Size = 16
+        Value = Null
+      end>
+    SQL.Strings = (
+      'SELECT * FROM BS_PESSOA'
+      'WHERE PES_NOME = :NOME'
+      'AND PES_DATANASC = :NASCIMENTO')
+    Left = 640
+    Top = 48
   end
 end

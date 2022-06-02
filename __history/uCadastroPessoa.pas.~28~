@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uCadastroPadrao, Data.DB, Vcl.Grids,
   Vcl.DBGrids, Vcl.ComCtrls, Vcl.StdCtrls, Vcl.ExtCtrls, Data.Win.ADODB,
-  Vcl.Mask, Vcl.DBCtrls, System.DateUtils, StrUtils, Vcl.WinXPickers;
+  Vcl.Mask, Vcl.DBCtrls, System.DateUtils, StrUtils;
 
 type
   TfCadastroPessoa = class(TfCadastroPadrao)
@@ -63,7 +63,6 @@ begin
   inherited;
 end;
 
-
 procedure TfCadastroPessoa.EDCelularExit(Sender: TObject);
 begin
   inherited;
@@ -97,12 +96,11 @@ end;
 procedure TfCadastroPessoa.EDNascimentoExit(Sender: TObject);
 begin
   inherited;
-{  if (Length(EDNascimento.Text) < 1) then
+  if (Length(EDNascimento.Text) < 1) then
   begin
     ShowMessage('A data de nascimento não pode ser em branco! ');
     EDNascimento.SetFocus;
   end;
-  }
 end;
 
 procedure TfCadastroPessoa.EDNomePessoaExit(Sender: TObject);

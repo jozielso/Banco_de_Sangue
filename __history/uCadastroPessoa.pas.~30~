@@ -33,6 +33,7 @@ type
     Label7: TLabel;
     EDCpf: TDBEdit;
     ADOQueryTmp: TADOQuery;
+    DPNascimento: TDatePicker;
     procedure FormShow(Sender: TObject);
     procedure btnSalvarClick(Sender: TObject);
     procedure EDNomePessoaExit(Sender: TObject);
@@ -41,6 +42,7 @@ type
     procedure EDEmailExit(Sender: TObject);
     procedure EDCelularExit(Sender: TObject);
     procedure EDCpfExit(Sender: TObject);
+    procedure DTPNascimentoChange(Sender: TObject);
   private
     { Private declarations }
     procedure pValidacao();
@@ -97,12 +99,11 @@ end;
 procedure TfCadastroPessoa.EDNascimentoExit(Sender: TObject);
 begin
   inherited;
-{  if (Length(EDNascimento.Text) < 1) then
+  if (Length(EDNascimento.Text) < 1) then
   begin
     ShowMessage('A data de nascimento não pode ser em branco! ');
     EDNascimento.SetFocus;
   end;
-  }
 end;
 
 procedure TfCadastroPessoa.EDNomePessoaExit(Sender: TObject);
@@ -130,6 +131,7 @@ begin
   inherited;
   ADOQueryPessoa.Close;
   ADOQueryPessoa.Open;
+  EDNascimento.Text :=   DateToStr(DPNascimento.Date);
 end;
 
 procedure TfCadastroPessoa.pValidacao;

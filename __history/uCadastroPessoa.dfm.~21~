@@ -138,6 +138,20 @@ inherited fCadastroPessoa: TfCadastroPessoa
           TabOrder = 6
           OnExit = EDCpfExit
         end
+        object DPNascimento: TDatePicker
+          Left = 293
+          Top = 148
+          Width = 196
+          Height = 23
+          Date = 44713.000000000000000000
+          DateFormat = 'dd/MM/yyyy'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          TabOrder = 7
+        end
       end
     end
   end

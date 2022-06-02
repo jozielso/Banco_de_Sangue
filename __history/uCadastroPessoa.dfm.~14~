@@ -1,7 +1,6 @@
 inherited fCadastroPessoa: TfCadastroPessoa
   Caption = 'Cadastro de Pessoas'
   Position = poScreenCenter
-  ExplicitTop = -86
   PixelsPerInch = 96
   TextHeight = 13
   inherited PanelPrincipal: TPanel
@@ -83,7 +82,6 @@ inherited fCadastroPessoa: TfCadastroPessoa
           DataField = 'PES_NOME'
           DataSource = DataSourcePadrao
           TabOrder = 1
-          OnExit = EDNomePessoaExit
         end
         object EDNascimento: TDBEdit
           Left = 49
@@ -93,7 +91,6 @@ inherited fCadastroPessoa: TfCadastroPessoa
           DataField = 'PES_DATANASC'
           DataSource = DataSourcePadrao
           TabOrder = 2
-          OnExit = EDNascimentoExit
         end
         object EDTipoSanguineo: TDBEdit
           Left = 49
@@ -103,7 +100,6 @@ inherited fCadastroPessoa: TfCadastroPessoa
           DataField = 'PES_TIPOSANG'
           DataSource = DataSourcePadrao
           TabOrder = 3
-          OnExit = EDTipoSanguineoExit
         end
         object EDEmail: TDBEdit
           Left = 49
@@ -114,7 +110,6 @@ inherited fCadastroPessoa: TfCadastroPessoa
           DataField = 'PES_EMAIL'
           DataSource = DataSourcePadrao
           TabOrder = 4
-          OnExit = EDEmailExit
         end
         object EDCelular: TDBEdit
           Left = 49
@@ -125,7 +120,6 @@ inherited fCadastroPessoa: TfCadastroPessoa
           DataField = 'PES_CELULAR'
           DataSource = DataSourcePadrao
           TabOrder = 5
-          OnExit = EDCelularExit
         end
         object EDCpf: TDBEdit
           Left = 49
@@ -136,7 +130,6 @@ inherited fCadastroPessoa: TfCadastroPessoa
           DataField = 'PES_CPF'
           DataSource = DataSourcePadrao
           TabOrder = 6
-          OnExit = EDCpfExit
         end
       end
     end

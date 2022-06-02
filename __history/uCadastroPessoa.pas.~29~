@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uCadastroPadrao, Data.DB, Vcl.Grids,
   Vcl.DBGrids, Vcl.ComCtrls, Vcl.StdCtrls, Vcl.ExtCtrls, Data.Win.ADODB,
-  Vcl.Mask, Vcl.DBCtrls, System.DateUtils, StrUtils, Vcl.WinXPickers;
+  Vcl.Mask, Vcl.DBCtrls, System.DateUtils, StrUtils;
 
 type
   TfCadastroPessoa = class(TfCadastroPadrao)
@@ -33,6 +33,7 @@ type
     Label7: TLabel;
     EDCpf: TDBEdit;
     ADOQueryTmp: TADOQuery;
+    DTPNascimento: TDateTimePicker;
     procedure FormShow(Sender: TObject);
     procedure btnSalvarClick(Sender: TObject);
     procedure EDNomePessoaExit(Sender: TObject);
@@ -41,6 +42,7 @@ type
     procedure EDEmailExit(Sender: TObject);
     procedure EDCelularExit(Sender: TObject);
     procedure EDCpfExit(Sender: TObject);
+    procedure DTPNascimentoChange(Sender: TObject);
   private
     { Private declarations }
     procedure pValidacao();
@@ -63,6 +65,11 @@ begin
   inherited;
 end;
 
+procedure TfCadastroPessoa.DTPNascimentoChange(Sender: TObject);
+begin
+  inherited;
+  EDNascimento.Text := DateToStr(DTPNascimento.Date);
+end;
 
 procedure TfCadastroPessoa.EDCelularExit(Sender: TObject);
 begin
@@ -97,12 +104,11 @@ end;
 procedure TfCadastroPessoa.EDNascimentoExit(Sender: TObject);
 begin
   inherited;
-{  if (Length(EDNascimento.Text) < 1) then
+  if (Length(EDNascimento.Text) < 1) then
   begin
     ShowMessage('A data de nascimento não pode ser em branco! ');
     EDNascimento.SetFocus;
   end;
-  }
 end;
 
 procedure TfCadastroPessoa.EDNomePessoaExit(Sender: TObject);

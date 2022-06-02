@@ -1,7 +1,6 @@
 inherited fCadastroPessoa: TfCadastroPessoa
   Caption = 'Cadastro de Pessoas'
   Position = poScreenCenter
-  ExplicitTop = -86
   PixelsPerInch = 96
   TextHeight = 13
   inherited PanelPrincipal: TPanel
@@ -137,6 +136,21 @@ inherited fCadastroPessoa: TfCadastroPessoa
           DataSource = DataSourcePadrao
           TabOrder = 6
           OnExit = EDCpfExit
+        end
+        object DPNascimento: TDatePicker
+          Left = 293
+          Top = 148
+          Width = 196
+          Height = 23
+          Date = 44713.000000000000000000
+          DateFormat = 'dd/MM/yyyy'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          TabOrder = 7
+          OnChange = DPNascimentoChange
         end
       end
     end

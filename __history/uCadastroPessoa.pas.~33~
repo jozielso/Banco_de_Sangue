@@ -33,6 +33,7 @@ type
     Label7: TLabel;
     EDCpf: TDBEdit;
     ADOQueryTmp: TADOQuery;
+    DPNascimento: TDatePicker;
     procedure FormShow(Sender: TObject);
     procedure btnSalvarClick(Sender: TObject);
     procedure EDNomePessoaExit(Sender: TObject);
@@ -59,6 +60,7 @@ uses DMConexao;
 
 procedure TfCadastroPessoa.btnSalvarClick(Sender: TObject);
 begin
+  EDNascimento.Text := DateToStr(DPNascimento.Date);
   pValidacao();
   inherited;
 end;
