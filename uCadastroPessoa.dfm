@@ -75,8 +75,9 @@ inherited fCadastroPessoa: TfCadastroPessoa
         object EDNomePessoa: TDBEdit
           Left = 49
           Top = 112
-          Width = 1213
+          Width = 400
           Height = 21
+          AutoSize = False
           DataField = 'PES_NOME'
           DataSource = DataSourcePadrao
           TabOrder = 1
@@ -102,8 +103,9 @@ inherited fCadastroPessoa: TfCadastroPessoa
         object EDEmail: TDBEdit
           Left = 49
           Top = 232
-          Width = 1213
+          Width = 400
           Height = 21
+          AutoSize = False
           DataField = 'PES_EMAIL'
           DataSource = DataSourcePadrao
           TabOrder = 4
@@ -111,8 +113,9 @@ inherited fCadastroPessoa: TfCadastroPessoa
         object EDCelular: TDBEdit
           Left = 49
           Top = 272
-          Width = 1213
+          Width = 400
           Height = 21
+          AutoSize = False
           DataField = 'PES_CELULAR'
           DataSource = DataSourcePadrao
           TabOrder = 5
@@ -120,8 +123,9 @@ inherited fCadastroPessoa: TfCadastroPessoa
         object EDCpf: TDBEdit
           Left = 49
           Top = 312
-          Width = 1213
+          Width = 400
           Height = 21
+          AutoSize = False
           DataField = 'PES_CPF'
           DataSource = DataSourcePadrao
           TabOrder = 6

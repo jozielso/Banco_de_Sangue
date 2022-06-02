@@ -75,7 +75,7 @@ begin
     Idade := YearsBetween(Date, StrToDate(Nascimento));
     if ((Idade < 18) or (Idade > 60))  then
     begin
-        ShowMessage( 'Idade não permitida! '+ IntToStr(Idade) + ' Anos');
+        ShowMessage( 'Idade não permitida! '+ IntToStr(Idade) + ' Ano(s)');
         Abort;
     end;
 
@@ -83,6 +83,13 @@ begin
     if not MatchStr(EDTipoSanguineo.Text, TipoSanquineo) then
     begin
        ShowMessage( 'Tipo Sanguíneo inválido! '+ EDTipoSanguineo.Text);
+        Abort;
+    end;
+
+    //Validação de Nomes somente com mais de 5 caracteres
+    if (Length(EDNomePessoa.Text) <= 5) then
+    begin
+       ShowMessage( ' O Nome de pessoa deve possuir mais de 5 caractere ! O nome '+ EDNomePessoa.Text + ' Possui apenas ' +  IntToStr(Length(EDNomePessoa.Text)) + ' Caractere(s) ! ' );
         Abort;
     end;
 
