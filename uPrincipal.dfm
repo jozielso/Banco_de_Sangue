@@ -37,6 +37,7 @@ object fPrincipal: TfPrincipal
       Caption = 'Processo'
       object smDoacao: TMenuItem
         Caption = 'Doa'#231'ao'
+        OnClick = smDoacaoClick
       end
     end
     object mRelatorio: TMenuItem

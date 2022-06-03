@@ -1,0 +1,5 @@
+inherited fManutencaoDoacao: TfManutencaoDoacao
+  Caption = 'Manuten'#231#227'o de Doa'#231#227'o de Sangue'
+  PixelsPerInch = 96
+  TextHeight = 13
+end

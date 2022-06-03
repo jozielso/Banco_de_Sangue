@@ -1,7 +1,6 @@
 inherited fCadastroPessoa: TfCadastroPessoa
   Caption = 'Cadastro de Pessoas'
   Position = poScreenCenter
-  ExplicitTop = -86
   PixelsPerInch = 96
   TextHeight = 13
   inherited PanelPrincipal: TPanel
@@ -30,7 +29,6 @@ inherited fCadastroPessoa: TfCadastroPessoa
           Width = 81
           Height = 13
           Caption = 'Data Nascimento'
-          FocusControl = EDNascimento
         end
         object Label4: TLabel
           Left = 49
@@ -85,16 +83,6 @@ inherited fCadastroPessoa: TfCadastroPessoa
           TabOrder = 1
           OnExit = EDNomePessoaExit
         end
-        object EDNascimento: TDBEdit
-          Left = 49
-          Top = 149
-          Width = 238
-          Height = 21
-          DataField = 'PES_DATANASC'
-          DataSource = DataSourcePadrao
-          TabOrder = 2
-          OnExit = EDNascimentoExit
-        end
         object EDTipoSanguineo: TDBEdit
           Left = 49
           Top = 192
@@ -102,7 +90,7 @@ inherited fCadastroPessoa: TfCadastroPessoa
           Height = 21
           DataField = 'PES_TIPOSANG'
           DataSource = DataSourcePadrao
-          TabOrder = 3
+          TabOrder = 2
           OnExit = EDTipoSanguineoExit
         end
         object EDEmail: TDBEdit
@@ -113,7 +101,7 @@ inherited fCadastroPessoa: TfCadastroPessoa
           AutoSize = False
           DataField = 'PES_EMAIL'
           DataSource = DataSourcePadrao
-          TabOrder = 4
+          TabOrder = 3
           OnExit = EDEmailExit
         end
         object EDCelular: TDBEdit
@@ -124,7 +112,7 @@ inherited fCadastroPessoa: TfCadastroPessoa
           AutoSize = False
           DataField = 'PES_CELULAR'
           DataSource = DataSourcePadrao
-          TabOrder = 5
+          TabOrder = 4
           OnExit = EDCelularExit
         end
         object EDCpf: TDBEdit
@@ -135,8 +123,17 @@ inherited fCadastroPessoa: TfCadastroPessoa
           AutoSize = False
           DataField = 'PES_CPF'
           DataSource = DataSourcePadrao
-          TabOrder = 6
+          TabOrder = 5
           OnExit = EDCpfExit
+        end
+        object DTPNascimento: TDateTimePicker
+          Left = 49
+          Top = 149
+          Width = 186
+          Height = 21
+          Date = 44714.000000000000000000
+          Time = 0.026922303237370220
+          TabOrder = 6
         end
       end
     end
@@ -149,6 +146,7 @@ inherited fCadastroPessoa: TfCadastroPessoa
   object ADOQueryPessoa: TADOQuery
     Connection = Conexao.ADOConnection
     CursorType = ctStatic
+    BeforeEdit = ADOQueryPessoaBeforeEdit
     Parameters = <>
     SQL.Strings = (
       'SELECT * FROM BS_PESSOA')

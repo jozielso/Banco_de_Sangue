@@ -23,7 +23,6 @@ type
     Label2: TLabel;
     EDNomePessoa: TDBEdit;
     Label3: TLabel;
-    EDNascimento: TDBEdit;
     Label4: TLabel;
     EDTipoSanguineo: TDBEdit;
     Label5: TLabel;
@@ -33,6 +32,7 @@ type
     Label7: TLabel;
     EDCpf: TDBEdit;
     ADOQueryTmp: TADOQuery;
+    DTPNascimento: TDateTimePicker;
     procedure FormShow(Sender: TObject);
     procedure btnSalvarClick(Sender: TObject);
     procedure EDNomePessoaExit(Sender: TObject);
@@ -41,6 +41,8 @@ type
     procedure EDEmailExit(Sender: TObject);
     procedure EDCelularExit(Sender: TObject);
     procedure EDCpfExit(Sender: TObject);
+    procedure ADOQueryPessoaBeforeEdit(DataSet: TDataSet);
+    procedure btnAlterarClick(Sender: TObject);
   private
     { Private declarations }
     procedure pValidacao();
@@ -57,8 +59,24 @@ implementation
 
 uses DMConexao;
 
+procedure TfCadastroPessoa.ADOQueryPessoaBeforeEdit(DataSet: TDataSet);
+begin
+  inherited;
+  if ADOQueryPessoa.State  in [dsEdit] then
+  begin
+    DTPNascimento.Date :=  ADOQueryPessoaPES_DATANASC.Value;
+  end;
+end;
+
+procedure TfCadastroPessoa.btnAlterarClick(Sender: TObject);
+begin
+  inherited;
+  DTPNascimento.DateTime := ADOQueryPessoaPES_DATANASC.Value;
+end;
+
 procedure TfCadastroPessoa.btnSalvarClick(Sender: TObject);
 begin
+  ADOQueryPessoaPES_DATANASC.Value := StrToDate(FormatDateTime('dd/mm/yyyy', DTPNascimento.Date));
   pValidacao();
   inherited;
 end;
@@ -149,13 +167,12 @@ begin
     end;
 
     //Validação da idade.
-    Nascimento := EDNascimento.Text;
+    Nascimento := DateToStr(DTPNascimento.Date); // EDNascimento.Text;
     Idade := YearsBetween(Date, StrToDate(Nascimento));
-    if ((Idade < 18) or (Idade > 60) or (Length(EDNascimento.Text) < 1))  then
+    if ((Idade < 18) or (Idade > 60) or (Length(DateToStr(DTPNascimento.Date)) < 1))  then
     begin
         ShowMessage( 'Idade não permitida! '+ IntToStr(Idade) + ' Ano(s)');
         Abort;
-        EDNascimento.SetFocus;
     end;
 
     //Validação do Tipo Sanguíneo
@@ -169,18 +186,19 @@ begin
 
 
     //Validação de Pessoa com mesmo nome e data de nascimento
-    ADOQueryTmp.close;
-    ADOQueryTmp.SQL.Text := 'SELECT * FROM BS_PESSOA WHERE PES_NOME = ''' + EDNomePessoa.Text + ''' AND PES_DATANASC = ''' + EDNascimento.Text + ''' ' ;
-    ADOQueryTmp.OPen;
-    try
-       if ADOQueryTmp.fieldByName('PES_ID').AsInteger > 0 then
-       begin
-          ShowMessage( ' Esse registro já existe no banco de dados! '+ EDNomePessoa.Text );
-          Abort;
-          EDNomePessoa.SetFocus;
-       end;
-    finally
-       ADOQueryTmp.Close;
+      ADOQueryTmp.close;
+      ADOQueryTmp.SQL.Text := 'SELECT * FROM BS_PESSOA WHERE PES_NOME = ''' + EDNomePessoa.Text + ''' AND PES_DATANASC = ''' + FormatDateTime('mm/dd/yyyy', DTPNascimento.Date) + ''' ' ;
+      ADOQueryTmp.OPen;
+      try
+         if ADOQueryTmp.fieldByName('PES_ID').AsInteger > 0 then
+         begin
+            ShowMessage( ' Esse registro já existe no banco de dados! '+ EDNomePessoa.Text );
+            Abort;
+            EDNomePessoa.SetFocus;
+         end;
+      finally
+         ADOQueryTmp.Close;
+
 end;
 
 end;

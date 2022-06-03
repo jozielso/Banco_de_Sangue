@@ -5,7 +5,8 @@ uses
   uPrincipal in 'uPrincipal.pas' {fPrincipal},
   DMConexao in 'DMConexao.pas' {Conexao: TDataModule},
   uCadastroPadrao in 'uCadastroPadrao.pas' {fCadastroPadrao},
-  uCadastroPessoa in 'uCadastroPessoa.pas' {fCadastroPessoa};
+  uCadastroPessoa in 'uCadastroPessoa.pas' {fCadastroPessoa},
+  uManutencaoDoacao in 'uManutencaoDoacao.pas' {fManutencaoDoacao};
 
 {$R *.res}
 
@@ -16,5 +17,6 @@ begin
   Application.CreateForm(TConexao, Conexao);
   Application.CreateForm(TfCadastroPadrao, fCadastroPadrao);
   Application.CreateForm(TfCadastroPessoa, fCadastroPessoa);
+  Application.CreateForm(TfManutencaoDoacao, fManutencaoDoacao);
   Application.Run;
 end.
