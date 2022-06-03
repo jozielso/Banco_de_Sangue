@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uCadastroPadrao, Data.DB, Vcl.Grids,
   Vcl.DBGrids, Vcl.ComCtrls, Vcl.StdCtrls, Vcl.ExtCtrls, Data.Win.ADODB,
-  Vcl.Mask, Vcl.DBCtrls;
+  Vcl.Mask, Vcl.DBCtrls, Vcl.Buttons;
 
 type
   TfManutencaoDoacao = class(TfCadastroPadrao)
@@ -25,8 +25,10 @@ type
     Label4: TLabel;
     EDStatus: TDBEdit;
     Label5: TLabel;
-    DBEdit5: TDBEdit;
+    EDPessoa: TDBEdit;
+    BitBtnBuscarPessoa: TBitBtn;
     procedure FormShow(Sender: TObject);
+    procedure BitBtnBuscarPessoaClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -40,7 +42,16 @@ implementation
 
 {$R *.dfm}
 
-uses DMConexao;
+uses DMConexao, uPesquisaPessoa;
+
+procedure TfManutencaoDoacao.BitBtnBuscarPessoaClick(Sender: TObject);
+begin
+  inherited;
+  if TfPesquisaPessoa(Application.FindComponent('fPesquisaPessoa')) = nil then
+     fPesquisaPessoa := TfPesquisaPessoa.Create(Application);
+     fPesquisaPessoa.ShowModal;
+     FreeAndNil(fPesquisaPessoa);
+end;
 
 procedure TfManutencaoDoacao.FormShow(Sender: TObject);
 begin

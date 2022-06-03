@@ -6,7 +6,8 @@ uses
   DMConexao in 'DMConexao.pas' {Conexao: TDataModule},
   uCadastroPadrao in 'uCadastroPadrao.pas' {fCadastroPadrao},
   uCadastroPessoa in 'uCadastroPessoa.pas' {fCadastroPessoa},
-  uManutencaoDoacao in 'uManutencaoDoacao.pas' {fManutencaoDoacao};
+  uManutencaoDoacao in 'uManutencaoDoacao.pas' {fManutencaoDoacao},
+  uPesquisaPessoa in 'uPesquisaPessoa.pas' {fPesquisaPessoa};
 
 {$R *.res}
 
@@ -18,5 +19,6 @@ begin
   Application.CreateForm(TfCadastroPadrao, fCadastroPadrao);
   Application.CreateForm(TfCadastroPessoa, fCadastroPessoa);
   Application.CreateForm(TfManutencaoDoacao, fManutencaoDoacao);
+  Application.CreateForm(TfPesquisaPessoa, fPesquisaPessoa);
   Application.Run;
 end.

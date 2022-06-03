@@ -1,0 +1,41 @@
+unit uPesquisaPessoa;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Data.DB,
+  Data.Win.ADODB, Vcl.Grids, Vcl.DBGrids;
+
+type
+  TfPesquisaPessoa = class(TForm)
+    Label1: TLabel;
+    EDNomePessoa: TEdit;
+    BitBtnLimpar: TBitBtn;
+    BitBtnVoltar: TBitBtn;
+    DBGrid1: TDBGrid;
+    ADOQueryPessoa: TADOQuery;
+    DataSource1: TDataSource;
+    procedure BitBtnLimparClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  fPesquisaPessoa: TfPesquisaPessoa;
+
+implementation
+
+{$R *.dfm}
+
+uses DMConexao;
+
+procedure TfPesquisaPessoa.BitBtnLimparClick(Sender: TObject);
+begin
+  EDNomePessoa.Clear;
+  EDNomePessoa.SetFocus;
+end;
+
+end.

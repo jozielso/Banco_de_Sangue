@@ -1,0 +1,35 @@
+unit uPesquisaPessoa;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons;
+
+type
+  TfPesquisaPessoa = class(TForm)
+    Label1: TLabel;
+    EDNomePessoa: TEdit;
+    BitBtnLimpar: TBitBtn;
+    BitBtnVoltar: TBitBtn;
+    procedure BitBtnLimparClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  fPesquisaPessoa: TfPesquisaPessoa;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfPesquisaPessoa.BitBtnLimparClick(Sender: TObject);
+begin
+  EDNomePessoa.Clear;
+  EDNomePessoa.SetFocus;
+end;
+
+end.

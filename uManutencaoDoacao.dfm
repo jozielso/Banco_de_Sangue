@@ -1,5 +1,6 @@
 inherited fManutencaoDoacao: TfManutencaoDoacao
   Caption = 'Manuten'#231#227'o de Doa'#231#227'o de Sangue'
+  Position = poScreenCenter
   PixelsPerInch = 96
   TextHeight = 13
   inherited PanelPrincipal: TPanel
@@ -38,12 +39,12 @@ inherited fManutencaoDoacao: TfManutencaoDoacao
           FocusControl = EDStatus
         end
         object Label5: TLabel
-          Left = 168
-          Top = 304
-          Width = 35
+          Left = 336
+          Top = 144
+          Width = 46
           Height = 13
-          Caption = 'PES_ID'
-          FocusControl = DBEdit5
+          Caption = 'Id Cliente'
+          FocusControl = EDPessoa
         end
         object EDId: TDBEdit
           Left = 168
@@ -52,13 +53,14 @@ inherited fManutencaoDoacao: TfManutencaoDoacao
           Height = 21
           DataField = 'DOA_ID'
           DataSource = DataSourcePadrao
+          Enabled = False
           TabOrder = 0
         end
         object EDData: TDBEdit
           Left = 168
           Top = 200
-          Width = 238
-          Height = 21
+          Width = 113
+          Height = 25
           DataField = 'DOA_DATA'
           DataSource = DataSourcePadrao
           TabOrder = 1
@@ -66,8 +68,8 @@ inherited fManutencaoDoacao: TfManutencaoDoacao
         object EDQtde: TDBEdit
           Left = 168
           Top = 240
-          Width = 251
-          Height = 21
+          Width = 102
+          Height = 18
           DataField = 'DOA_QTDE'
           DataSource = DataSourcePadrao
           TabOrder = 2
@@ -75,19 +77,35 @@ inherited fManutencaoDoacao: TfManutencaoDoacao
         object EDStatus: TDBEdit
           Left = 168
           Top = 280
-          Width = 17
+          Width = 56
           Height = 21
           DataField = 'DOA_STATUS'
           DataSource = DataSourcePadrao
           TabOrder = 3
         end
-        object DBEdit5: TDBEdit
-          Left = 168
-          Top = 320
-          Width = 134
+        object EDPessoa: TDBEdit
+          Left = 336
+          Top = 160
+          Width = 69
           Height = 21
           DataField = 'PES_ID'
+          DataSource = DataSourcePadrao
           TabOrder = 4
+        end
+        object BitBtnBuscarPessoa: TBitBtn
+          Left = 424
+          Top = 159
+          Width = 113
+          Height = 23
+          Caption = 'Buscar Pessoa'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 5
+          OnClick = BitBtnBuscarPessoaClick
         end
       end
     end
