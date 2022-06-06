@@ -5,6 +5,7 @@ inherited fManutencaoDoacao: TfManutencaoDoacao
   TextHeight = 13
   inherited PanelPrincipal: TPanel
     inherited PagePrincipal: TPageControl
+      ActivePage = TabSheetCampos
       inherited TabSheetCampos: TTabSheet
         object Label1: TLabel
           Left = 168
@@ -63,7 +64,7 @@ inherited fManutencaoDoacao: TfManutencaoDoacao
           Height = 25
           DataField = 'DOA_DATA'
           DataSource = DataSourcePadrao
-          TabOrder = 1
+          TabOrder = 3
         end
         object EDQtde: TDBEdit
           Left = 168
@@ -72,7 +73,7 @@ inherited fManutencaoDoacao: TfManutencaoDoacao
           Height = 18
           DataField = 'DOA_QTDE'
           DataSource = DataSourcePadrao
-          TabOrder = 2
+          TabOrder = 4
         end
         object EDStatus: TDBEdit
           Left = 168
@@ -81,7 +82,7 @@ inherited fManutencaoDoacao: TfManutencaoDoacao
           Height = 21
           DataField = 'DOA_STATUS'
           DataSource = DataSourcePadrao
-          TabOrder = 3
+          TabOrder = 5
         end
         object EDPessoa: TDBEdit
           Left = 336
@@ -90,7 +91,7 @@ inherited fManutencaoDoacao: TfManutencaoDoacao
           Height = 21
           DataField = 'PES_ID'
           DataSource = DataSourcePadrao
-          TabOrder = 4
+          TabOrder = 1
         end
         object BitBtnBuscarPessoa: TBitBtn
           Left = 424
@@ -104,8 +105,9 @@ inherited fManutencaoDoacao: TfManutencaoDoacao
           Font.Name = 'Tahoma'
           Font.Style = []
           ParentFont = False
-          TabOrder = 5
+          TabOrder = 2
           OnClick = BitBtnBuscarPessoaClick
+          OnExit = BitBtnBuscarPessoaExit
         end
       end
     end

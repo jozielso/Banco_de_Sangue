@@ -51,12 +51,12 @@ object fPesquisaPessoa: TfPesquisaPessoa
     TabOrder = 1
     OnClick = BitBtnLimparClick
   end
-  object BitBtnVoltar: TBitBtn
+  object BitBtnSelecionar: TBitBtn
     Left = 455
     Top = 53
     Width = 98
     Height = 33
-    Caption = 'Limpar'
+    Caption = 'Selecionar'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -19
@@ -64,6 +64,7 @@ object fPesquisaPessoa: TfPesquisaPessoa
     Font.Style = []
     ParentFont = False
     TabOrder = 2
+    OnClick = BitBtnSelecionarClick
   end
   object DBGrid1: TDBGrid
     Left = 8

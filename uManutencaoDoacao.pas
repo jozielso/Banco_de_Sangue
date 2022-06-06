@@ -29,10 +29,14 @@ type
     BitBtnBuscarPessoa: TBitBtn;
     procedure FormShow(Sender: TObject);
     procedure BitBtnBuscarPessoaClick(Sender: TObject);
+    procedure BitBtnBuscarPessoaExit(Sender: TObject);
   private
     { Private declarations }
+    procedure ValidaDocacao();
   public
     { Public declarations }
+    vIdPessoaPesquisa : Integer;
+
   end;
 
 var
@@ -53,11 +57,39 @@ begin
      FreeAndNil(fPesquisaPessoa);
 end;
 
+procedure TfManutencaoDoacao.BitBtnBuscarPessoaExit(Sender: TObject);
+begin
+  inherited;
+  EDPessoa.Text := IntToStr(vIdPessoaPesquisa);
+end;
+
 procedure TfManutencaoDoacao.FormShow(Sender: TObject);
 begin
   inherited;
   ADOQueryDoacao.Close;
   ADOQueryDoacao.Open;
+end;
+
+procedure TfManutencaoDoacao.ValidaDocacao;
+begin
+  if (Length(EDPessoa.Text) < 1) then
+  begin
+    ShowMessage('O id da pessoa não pode ser em branco! ');
+    EDPessoa.SetFocus;
+  end;
+
+  if (Length(EDData.Text) < 1) then
+  begin
+    ShowMessage('A data da doação não pode ser em branco! ');
+    EDData.SetFocus;
+  end;
+
+  if (Length(EDQtde.Text) < 1) then
+  begin
+    ShowMessage('A quantidade da da doação não pode ser em branco! ');
+    EDQtde.SetFocus;
+  end;
+
 end;
 
 end.

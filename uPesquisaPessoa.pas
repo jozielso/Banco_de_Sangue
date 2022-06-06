@@ -12,7 +12,7 @@ type
     Label1: TLabel;
     EDNomePessoa: TEdit;
     BitBtnLimpar: TBitBtn;
-    BitBtnVoltar: TBitBtn;
+    BitBtnSelecionar: TBitBtn;
     DBGrid1: TDBGrid;
     ADOQueryPessoa: TADOQuery;
     DataSourcePessoa: TDataSource;
@@ -26,10 +26,12 @@ type
     procedure BitBtnLimparClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure EDNomePessoaChange(Sender: TObject);
+    procedure BitBtnSelecionarClick(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
+
   end;
 
 var
@@ -39,12 +41,18 @@ implementation
 
 {$R *.dfm}
 
-uses DMConexao;
+uses DMConexao, uManutencaoDoacao;
 
 procedure TfPesquisaPessoa.BitBtnLimparClick(Sender: TObject);
 begin
   EDNomePessoa.Clear;
   EDNomePessoa.SetFocus;
+end;
+
+procedure TfPesquisaPessoa.BitBtnSelecionarClick(Sender: TObject);
+begin
+  fManutencaoDoacao.vIdPessoaPesquisa := ADOQueryPessoaPES_ID.Value;
+  Close;
 end;
 
 procedure TfPesquisaPessoa.EDNomePessoaChange(Sender: TObject);
