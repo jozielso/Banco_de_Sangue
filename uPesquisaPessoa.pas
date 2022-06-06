@@ -52,6 +52,7 @@ end;
 procedure TfPesquisaPessoa.BitBtnSelecionarClick(Sender: TObject);
 begin
   fManutencaoDoacao.vIdPessoaPesquisa := ADOQueryPessoaPES_ID.Value;
+  fManutencaoDoacao.vNascimento := DateToStr(ADOQueryPessoaPES_DATANASC.Value);
   Close;
 end;
 

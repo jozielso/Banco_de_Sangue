@@ -5,7 +5,6 @@ inherited fManutencaoDoacao: TfManutencaoDoacao
   TextHeight = 13
   inherited PanelPrincipal: TPanel
     inherited PagePrincipal: TPageControl
-      ActivePage = TabSheetCampos
       inherited TabSheetCampos: TTabSheet
         object Label1: TLabel
           Left = 168
@@ -21,7 +20,6 @@ inherited fManutencaoDoacao: TfManutencaoDoacao
           Width = 23
           Height = 13
           Caption = 'Data'
-          FocusControl = EDData
         end
         object Label3: TLabel
           Left = 168
@@ -37,7 +35,6 @@ inherited fManutencaoDoacao: TfManutencaoDoacao
           Width = 31
           Height = 13
           Caption = 'Status'
-          FocusControl = EDStatus
         end
         object Label5: TLabel
           Left = 336
@@ -57,15 +54,6 @@ inherited fManutencaoDoacao: TfManutencaoDoacao
           Enabled = False
           TabOrder = 0
         end
-        object EDData: TDBEdit
-          Left = 168
-          Top = 200
-          Width = 113
-          Height = 25
-          DataField = 'DOA_DATA'
-          DataSource = DataSourcePadrao
-          TabOrder = 3
-        end
         object EDQtde: TDBEdit
           Left = 168
           Top = 240
@@ -73,16 +61,7 @@ inherited fManutencaoDoacao: TfManutencaoDoacao
           Height = 18
           DataField = 'DOA_QTDE'
           DataSource = DataSourcePadrao
-          TabOrder = 4
-        end
-        object EDStatus: TDBEdit
-          Left = 168
-          Top = 280
-          Width = 56
-          Height = 21
-          DataField = 'DOA_STATUS'
-          DataSource = DataSourcePadrao
-          TabOrder = 5
+          TabOrder = 3
         end
         object EDPessoa: TDBEdit
           Left = 336
@@ -109,6 +88,27 @@ inherited fManutencaoDoacao: TfManutencaoDoacao
           OnClick = BitBtnBuscarPessoaClick
           OnExit = BitBtnBuscarPessoaExit
         end
+        object DTPDoacao: TDateTimePicker
+          Left = 168
+          Top = 199
+          Width = 154
+          Height = 25
+          Date = 44714.000000000000000000
+          Time = 0.026922303237370220
+          TabOrder = 4
+        end
+        object DBComboBox1: TDBComboBox
+          Left = 168
+          Top = 283
+          Width = 145
+          Height = 21
+          DataField = 'DOA_STATUS'
+          DataSource = DataSourcePadrao
+          Items.Strings = (
+            'N - Normal'
+            'A - Anulado')
+          TabOrder = 5
+        end
       end
     end
   end
@@ -120,9 +120,11 @@ inherited fManutencaoDoacao: TfManutencaoDoacao
   object ADOQueryDoacao: TADOQuery
     Connection = Conexao.ADOConnection
     CursorType = ctStatic
+    BeforeEdit = ADOQueryDoacaoBeforeEdit
     Parameters = <>
     SQL.Strings = (
-      'SELECT * FROM BS_DOACAO')
+      'SELECT D.*, P.PES_NOME FROM BS_DOACAO D (NOLOCK)'
+      'LEFT JOIN BS_PESSOA P (NOLOCK) ON D.PES_ID = P.PES_ID')
     Left = 557
     Top = 49
     object ADOQueryDoacaoDOA_ID: TAutoIncField
@@ -144,6 +146,10 @@ inherited fManutencaoDoacao: TfManutencaoDoacao
     end
     object ADOQueryDoacaoPES_ID: TIntegerField
       FieldName = 'PES_ID'
+    end
+    object ADOQueryDoacaoPES_NOME: TStringField
+      FieldName = 'PES_NOME'
+      Size = 100
     end
   end
 end

@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uCadastroPadrao, Data.DB, Vcl.Grids,
   Vcl.DBGrids, Vcl.ComCtrls, Vcl.StdCtrls, Vcl.ExtCtrls, Data.Win.ADODB,
-  Vcl.Mask, Vcl.DBCtrls, Vcl.Buttons;
+  Vcl.Mask, Vcl.DBCtrls, Vcl.Buttons, System.DateUtils;
 
 type
   TfManutencaoDoacao = class(TfCadastroPadrao)
@@ -19,23 +19,29 @@ type
     Label1: TLabel;
     EDId: TDBEdit;
     Label2: TLabel;
-    EDData: TDBEdit;
     Label3: TLabel;
     EDQtde: TDBEdit;
     Label4: TLabel;
-    EDStatus: TDBEdit;
     Label5: TLabel;
     EDPessoa: TDBEdit;
     BitBtnBuscarPessoa: TBitBtn;
+    DTPDoacao: TDateTimePicker;
+    ADOQueryDoacaoPES_NOME: TStringField;
+    DBComboBox1: TDBComboBox;
     procedure FormShow(Sender: TObject);
     procedure BitBtnBuscarPessoaClick(Sender: TObject);
     procedure BitBtnBuscarPessoaExit(Sender: TObject);
+    procedure ADOQueryDoacaoBeforeEdit(DataSet: TDataSet);
+    procedure btnAlterarClick(Sender: TObject);
+    procedure btnSalvarClick(Sender: TObject);
   private
     { Private declarations }
-    procedure ValidaDocacao();
+    procedure pValidaDocacao();
+
   public
     { Public declarations }
     vIdPessoaPesquisa : Integer;
+    vNascimento : String;
 
   end;
 
@@ -47,6 +53,15 @@ implementation
 {$R *.dfm}
 
 uses DMConexao, uPesquisaPessoa;
+
+procedure TfManutencaoDoacao.ADOQueryDoacaoBeforeEdit(DataSet: TDataSet);
+begin
+  inherited;
+  if ADOQueryDoacao.State  in [dsEdit] then
+  begin
+    DTPDoacao.Date :=  ADOQueryDoacaoDOA_DATA.Value;
+  end;
+end;
 
 procedure TfManutencaoDoacao.BitBtnBuscarPessoaClick(Sender: TObject);
 begin
@@ -63,6 +78,20 @@ begin
   EDPessoa.Text := IntToStr(vIdPessoaPesquisa);
 end;
 
+procedure TfManutencaoDoacao.btnAlterarClick(Sender: TObject);
+begin
+  inherited;
+  DTPDoacao.DateTime := ADOQueryDoacaoDOA_DATA.Value;
+end;
+
+procedure TfManutencaoDoacao.btnSalvarClick(Sender: TObject);
+begin
+  ADOQueryDoacaoDOA_DATA.Value := StrToDate(FormatDateTime('dd/mm/yyyy', DTPDoacao.Date));
+  pValidaDocacao;
+  inherited;
+
+end;
+
 procedure TfManutencaoDoacao.FormShow(Sender: TObject);
 begin
   inherited;
@@ -70,7 +99,10 @@ begin
   ADOQueryDoacao.Open;
 end;
 
-procedure TfManutencaoDoacao.ValidaDocacao;
+procedure TfManutencaoDoacao.pValidaDocacao;
+var
+  Idade: integer;
+
 begin
   if (Length(EDPessoa.Text) < 1) then
   begin
@@ -78,17 +110,29 @@ begin
     EDPessoa.SetFocus;
   end;
 
-  if (Length(EDData.Text) < 1) then
-  begin
-    ShowMessage('A data da doação não pode ser em branco! ');
-    EDData.SetFocus;
-  end;
 
   if (Length(EDQtde.Text) < 1) then
   begin
     ShowMessage('A quantidade da da doação não pode ser em branco! ');
     EDQtde.SetFocus;
   end;
+
+  if (StrToInt(EDQtde.Text) < 1) then
+  begin
+    ShowMessage('A quantidade deve ser maior que zero! ');
+    EDQtde.SetFocus;
+  end;
+
+  //Validação para não permitir doadores maiores de 60 anos.
+    Idade := YearsBetween(Date, StrToDate(vNascimento));
+    if (Idade > 60) then
+    begin
+        ShowMessage( 'Maiores de 60 anos não podem doar sangue! '+ IntToStr(Idade) + ' Ano(s)');
+        Abort;
+    end;
+
+
+
 
 end;
 

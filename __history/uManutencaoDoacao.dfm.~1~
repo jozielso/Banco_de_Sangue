@@ -1,5 +1,0 @@
-inherited fCadastroPadrao1: TfCadastroPadrao1
-  Caption = 'fCadastroPadrao1'
-  PixelsPerInch = 96
-  TextHeight = 13
-end

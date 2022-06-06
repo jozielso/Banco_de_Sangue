@@ -1,0 +1,6 @@
+﻿[DataSourcePadrao]
+LayerNames="N - Normal";"A - Anulado"
+
+[Module Settings]
+ModelLayerNames="N - Normal";"A - Anulado"
+
