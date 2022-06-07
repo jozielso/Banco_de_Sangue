@@ -28,12 +28,14 @@ type
     DTPDoacao: TDateTimePicker;
     ADOQueryDoacaoPES_NOME: TStringField;
     DBCBXStatus: TDBComboBox;
+    ADOQueryTmp: TADOQuery;
     procedure FormShow(Sender: TObject);
     procedure BitBtnBuscarPessoaClick(Sender: TObject);
     procedure BitBtnBuscarPessoaExit(Sender: TObject);
     procedure ADOQueryDoacaoBeforeEdit(DataSet: TDataSet);
     procedure btnAlterarClick(Sender: TObject);
     procedure btnSalvarClick(Sender: TObject);
+    procedure btnIncluirClick(Sender: TObject);
   private
     { Private declarations }
     procedure pValidaDocacao();
@@ -84,6 +86,12 @@ begin
   DTPDoacao.DateTime := ADOQueryDoacaoDOA_DATA.Value;
 end;
 
+procedure TfManutencaoDoacao.btnIncluirClick(Sender: TObject);
+begin
+  inherited;
+  DTPDoacao.Date := Date;
+end;
+
 procedure TfManutencaoDoacao.btnSalvarClick(Sender: TObject);
 begin
   ADOQueryDoacaoDOA_DATA.Value := StrToDate(FormatDateTime('dd/mm/yyyy', DTPDoacao.Date));
@@ -101,7 +109,9 @@ end;
 
 procedure TfManutencaoDoacao.pValidaDocacao;
 var
-  Idade: integer;
+  Idade, limiteDoacao : integer;
+  dUltimaDoacao : String;
+
 
 begin
   if (Length(EDPessoa.Text) < 1) then
@@ -110,17 +120,33 @@ begin
     EDPessoa.SetFocus;
   end;
 
+  if (DTPDoacao.Date > Date) then
+  begin
+    ShowMessage('A data da doação não pode ser maior que a data atual! ');
+    DTPDoacao.SetFocus;
+    Abort;
+  end;
+
 
   if (Length(EDQtde.Text) < 1) then
   begin
     ShowMessage('A quantidade da da doação não pode ser em branco! ');
     EDQtde.SetFocus;
+    Abort;
   end;
 
   if (StrToInt(EDQtde.Text) < 1) then
   begin
     ShowMessage('A quantidade deve ser maior que zero! ');
     EDQtde.SetFocus;
+    Abort;
+  end;
+
+  if (StrToInt(EDQtde.Text) > 1000) then
+  begin
+    ShowMessage('A quantidade não pode ser maior que 1 litro (1000 ml)! ');
+    EDQtde.SetFocus;
+    Abort;
   end;
 
   //Validação para não permitir doadores maiores de 60 anos.
@@ -131,9 +157,27 @@ begin
         Abort;
     end;
 
+     // Validação para não permitir doação a cada 15 dias
+      ADOQueryTmp.close;
+      ADOQueryTmp.SQL.Text := 'SELECT MAX(CONVERT(DATE,DOA_DATA,103)) AS MAIOR_DATA FROM BS_DOACAO (NOLOCK) WHERE PES_ID = ''' + IntToStr(vIdPessoaPesquisa) +  ''' ' ;
+      ADOQueryTmp.OPen;
+      dUltimaDoacao :=  ADOQueryTmp.fieldByName('MAIOR_DATA').Value;
+      limiteDoacao  := DaysBetween(Date, StrToDate(dUltimaDoacao));
+      try
+         if (limiteDoacao < 15) then
+         begin
+            ShowMessage( ' O limite mínimo para uma próxima doação é de 15 dias! A ultima doação para para essa pessoa foi a '+ IntToStr(limiteDoacao) + ''' Dia(s) ! ' );
+            Abort;
+            EDPessoa.SetFocus;
+         end;
+      finally
+         ADOQueryTmp.Close;
 
 
 
+
+
+end;
 end;
 
 end.

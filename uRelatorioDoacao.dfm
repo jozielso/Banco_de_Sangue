@@ -11,6 +11,8 @@ object fRelatorioDoacao: TfRelatorioDoacao
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poScreenCenter
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object PanelCabecalho: TPanel
@@ -116,7 +118,7 @@ object fRelatorioDoacao: TfRelatorioDoacao
     XLSSettings.Title = 'Report'
     XLSSettings.WorksheetName = 'Report'
     Left = 664
-    Top = 56
+    Top = 40
     Version = '20.04'
     mmColumnWidth = 0
     DataPipelineName = 'ppDBPLRelDoacao'
@@ -124,8 +126,36 @@ object fRelatorioDoacao: TfRelatorioDoacao
       Background.Brush.Style = bsClear
       Border.mmPadding = 0
       mmBottomOffset = 0
-      mmHeight = 27252
+      mmHeight = 28310
       mmPrintPosition = 0
+      object ppRegion1: TppRegion
+        DesignLayer = ppDesignLayer1
+        UserName = 'Region1'
+        Caption = 'Region1'
+        mmHeight = 10587
+        mmLeft = 27253
+        mmTop = 17724
+        mmWidth = 143404
+        BandType = 0
+        LayerName = Foreground
+        mmBottomOffset = 0
+        mmOverFlowOffset = 0
+        mmStopPosition = 0
+        mmMinHeight = 0
+        object ppLine1: TppLine
+          DesignLayer = ppDesignLayer1
+          UserName = 'Line1'
+          Border.mmPadding = 0
+          Position = lpLeft
+          Weight = 0.750000000000000000
+          mmHeight = 10325
+          mmLeft = 121182
+          mmTop = 17989
+          mmWidth = 4498
+          BandType = 0
+          LayerName = Foreground
+        end
+      end
       object ppLabel1: TppLabel
         DesignLayer = ppDesignLayer1
         UserName = 'Label1'
@@ -162,7 +192,7 @@ object fRelatorioDoacao: TfRelatorioDoacao
         FormFieldSettings.FormFieldType = fftNone
         Transparent = True
         mmHeight = 4763
-        mmLeft = 10054
+        mmLeft = 31222
         mmTop = 21431
         mmWidth = 33338
         BandType = 0
@@ -184,7 +214,7 @@ object fRelatorioDoacao: TfRelatorioDoacao
         TextAlignment = taRightJustified
         Transparent = True
         mmHeight = 4763
-        mmLeft = 107950
+        mmLeft = 129118
         mmTop = 21431
         mmWidth = 24871
         BandType = 0
@@ -203,8 +233,85 @@ object fRelatorioDoacao: TfRelatorioDoacao
       Background.Brush.Style = bsClear
       Border.mmPadding = 0
       mmBottomOffset = 0
+      mmHeight = 0
+      mmPrintPosition = 0
+    end
+    object ppSummaryBand1: TppSummaryBand
+      Background.Brush.Style = bsClear
+      Border.mmPadding = 0
+      mmBottomOffset = 0
       mmHeight = 13229
       mmPrintPosition = 0
+      object ppRegion3: TppRegion
+        DesignLayer = ppDesignLayer1
+        UserName = 'Region3'
+        Caption = 'Region3'
+        mmHeight = 10583
+        mmLeft = 27255
+        mmTop = 529
+        mmWidth = 143669
+        BandType = 7
+        LayerName = Foreground
+        mmBottomOffset = 0
+        mmOverFlowOffset = 0
+        mmStopPosition = 0
+        mmMinHeight = 0
+        object ppLine3: TppLine
+          DesignLayer = ppDesignLayer1
+          UserName = 'Line3'
+          Border.mmPadding = 0
+          Position = lpLeft
+          Weight = 0.750000000000000000
+          mmHeight = 10325
+          mmLeft = 121184
+          mmTop = 794
+          mmWidth = 4763
+          BandType = 7
+          LayerName = Foreground
+        end
+        object ppDBCalc2: TppDBCalc
+          DesignLayer = ppDesignLayer1
+          UserName = 'DBCalc2'
+          Border.mmPadding = 0
+          DataField = 'ID_DOACAO'
+          DataPipeline = ppDBPLRelDoacao
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Name = 'Arial'
+          Font.Size = 12
+          Font.Style = [fsBold]
+          TextAlignment = taRightJustified
+          Transparent = True
+          DBCalcType = dcCount
+          DataPipelineName = 'ppDBPLRelDoacao'
+          mmHeight = 4498
+          mmLeft = 136787
+          mmTop = 3175
+          mmWidth = 17198
+          BandType = 7
+          LayerName = Foreground
+        end
+      end
+      object ppLabel4: TppLabel
+        DesignLayer = ppDesignLayer1
+        UserName = 'Label4'
+        Border.mmPadding = 0
+        Caption = 'Total'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Arial'
+        Font.Size = 14
+        Font.Style = [fsBold]
+        FormFieldSettings.FormSubmitInfo.SubmitMethod = fstPost
+        FormFieldSettings.FormFieldType = fftNone
+        Transparent = True
+        mmHeight = 5821
+        mmLeft = 29900
+        mmTop = 1852
+        mmWidth = 21696
+        BandType = 7
+        LayerName = Foreground
+      end
     end
     object ppGroup1: TppGroup
       BreakName = 'PES_TIPOSANG'
@@ -232,8 +339,24 @@ object fRelatorioDoacao: TfRelatorioDoacao
         PrintHeight = phDynamic
         HideWhenOneDetail = False
         mmBottomOffset = 0
-        mmHeight = 9525
+        mmHeight = 10583
         mmPrintPosition = 0
+        object ppRegion2: TppRegion
+          DesignLayer = ppDesignLayer1
+          UserName = 'Region2'
+          Caption = 'Region2'
+          mmHeight = 8993
+          mmLeft = 27256
+          mmTop = 266
+          mmWidth = 143408
+          BandType = 5
+          GroupNo = 0
+          LayerName = Foreground
+          mmBottomOffset = 0
+          mmOverFlowOffset = 0
+          mmStopPosition = 0
+          mmMinHeight = 0
+        end
         object ppDBText1: TppDBText
           DesignLayer = ppDesignLayer1
           UserName = 'DBText1'
@@ -248,7 +371,7 @@ object fRelatorioDoacao: TfRelatorioDoacao
           Transparent = True
           DataPipelineName = 'ppDBPLRelDoacao'
           mmHeight = 4763
-          mmLeft = 10054
+          mmLeft = 31222
           mmTop = 1323
           mmWidth = 7408
           BandType = 5
@@ -259,7 +382,7 @@ object fRelatorioDoacao: TfRelatorioDoacao
           DesignLayer = ppDesignLayer1
           UserName = 'DBCalc1'
           Border.mmPadding = 0
-          DataField = 'DOA_ID'
+          DataField = 'ID_DOACAO'
           DataPipeline = ppDBPLRelDoacao
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -272,9 +395,23 @@ object fRelatorioDoacao: TfRelatorioDoacao
           DBCalcType = dcCount
           DataPipelineName = 'ppDBPLRelDoacao'
           mmHeight = 4498
-          mmLeft = 115623
+          mmLeft = 136791
           mmTop = 3175
           mmWidth = 17198
+          BandType = 5
+          GroupNo = 0
+          LayerName = Foreground
+        end
+        object ppLine2: TppLine
+          DesignLayer = ppDesignLayer1
+          UserName = 'Line2'
+          Border.mmPadding = 0
+          Position = lpLeft
+          Weight = 0.750000000000000000
+          mmHeight = 11644
+          mmLeft = 121173
+          mmTop = -2646
+          mmWidth = 4498
           BandType = 5
           GroupNo = 0
           LayerName = Foreground
@@ -294,69 +431,51 @@ object fRelatorioDoacao: TfRelatorioDoacao
   object ppDBPLRelDoacao: TppDBPipeline
     DataSource = DataSourceRelDoacao
     UserName = 'DBPLRelDoacao'
-    Left = 656
-    Top = 8
+    Left = 568
+    Top = 40
     object ppDBPLRelDoacaoppField1: TppField
       Alignment = taRightJustify
-      FieldAlias = 'DOA_ID'
-      FieldName = 'DOA_ID'
+      FieldAlias = 'ID_DOACAO'
+      FieldName = 'ID_DOACAO'
       FieldLength = 0
       DataType = dtLongint
-      DisplayWidth = 0
+      DisplayWidth = 10
       Position = 0
     end
     object ppDBPLRelDoacaoppField2: TppField
-      FieldAlias = 'DOA_DATA'
-      FieldName = 'DOA_DATA'
+      FieldAlias = 'DATA_DOA'#199#195'O'
+      FieldName = 'DATA_DOA'#199#195'O'
       FieldLength = 0
-      DataType = dtDateTime
-      DisplayWidth = 18
+      DataType = dtDate
+      DisplayWidth = 10
       Position = 1
     end
     object ppDBPLRelDoacaoppField3: TppField
-      Alignment = taRightJustify
-      FieldAlias = 'DOA_QTDE'
-      FieldName = 'DOA_QTDE'
-      FieldLength = 2
-      DataType = dtDouble
-      DisplayWidth = 19
-      Position = 2
-    end
-    object ppDBPLRelDoacaoppField4: TppField
       FieldAlias = 'DOA_STATUS'
       FieldName = 'DOA_STATUS'
       FieldLength = 1
       DisplayWidth = 1
-      Position = 3
+      Position = 2
     end
-    object ppDBPLRelDoacaoppField5: TppField
-      Alignment = taRightJustify
-      FieldAlias = 'PES_ID'
-      FieldName = 'PES_ID'
-      FieldLength = 0
-      DataType = dtInteger
-      DisplayWidth = 10
-      Position = 4
-    end
-    object ppDBPLRelDoacaoppField6: TppField
+    object ppDBPLRelDoacaoppField4: TppField
       FieldAlias = 'PES_NOME'
       FieldName = 'PES_NOME'
       FieldLength = 100
       DisplayWidth = 100
-      Position = 5
+      Position = 3
     end
-    object ppDBPLRelDoacaoppField7: TppField
+    object ppDBPLRelDoacaoppField5: TppField
       FieldAlias = 'PES_TIPOSANG'
       FieldName = 'PES_TIPOSANG'
       FieldLength = 2
       DisplayWidth = 2
-      Position = 6
+      Position = 4
     end
   end
   object DataSourceRelDoacao: TDataSource
     DataSet = ADOQueryRelDoacao
-    Left = 568
-    Top = 56
+    Left = 440
+    Top = 40
   end
   object ADOQueryRelDoacao: TADOQuery
     Active = True
@@ -364,8 +483,14 @@ object fRelatorioDoacao: TfRelatorioDoacao
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
-      'SELECT D.*, P.PES_NOME, P.PES_TIPOSANG FROM BS_DOACAO D (NOLOCK)'
-      'LEFT JOIN BS_PESSOA P (NOLOCK) ON D.PES_ID = P.PES_ID')
-    Left = 552
+      
+        'SELECT DOA_ID as ID_DOACAO, CONVERT(DATE, D.DOA_DATA, 103) AS DA' +
+        'TA_DOA'#199#195'O, D.DOA_STATUS,'
+      'P.PES_NOME, P.PES_TIPOSANG '
+      'FROM BS_DOACAO D (NOLOCK)'
+      'LEFT JOIN BS_PESSOA P (NOLOCK) ON D.PES_ID = P.PES_ID'
+      'ORDER BY P.PES_TIPOSANG')
+    Left = 312
+    Top = 40
   end
 end

@@ -187,7 +187,7 @@ begin
 
     //Validação de Pessoa com mesmo nome e data de nascimento
       ADOQueryTmp.close;
-      ADOQueryTmp.SQL.Text := 'SELECT * FROM BS_PESSOA WHERE PES_NOME = ''' + EDNomePessoa.Text + ''' AND PES_DATANASC = ''' + FormatDateTime('mm/dd/yyyy', DTPNascimento.Date) + ''' ' ;
+      ADOQueryTmp.SQL.Text := 'SELECT * FROM BS_PESSOA (NOLOCK) WHERE PES_NOME = ''' + EDNomePessoa.Text + ''' AND PES_DATANASC = ''' + FormatDateTime('mm/dd/yyyy', DTPNascimento.Date) + ''' ' ;
       ADOQueryTmp.OPen;
       try
          if ADOQueryTmp.fieldByName('PES_ID').AsInteger > 0 then

@@ -5,6 +5,7 @@ inherited fManutencaoDoacao: TfManutencaoDoacao
   TextHeight = 13
   inherited PanelPrincipal: TPanel
     inherited PagePrincipal: TPageControl
+      ActivePage = TabSheetCampos
       inherited TabSheetCampos: TTabSheet
         object Label1: TLabel
           Left = 168
@@ -24,9 +25,9 @@ inherited fManutencaoDoacao: TfManutencaoDoacao
         object Label3: TLabel
           Left = 168
           Top = 224
-          Width = 56
+          Width = 71
           Height = 13
-          Caption = 'Quantiadde'
+          Caption = 'Quantiade (ml)'
           FocusControl = EDQtde
         end
         object Label4: TLabel
@@ -61,7 +62,7 @@ inherited fManutencaoDoacao: TfManutencaoDoacao
           Height = 21
           DataField = 'DOA_QTDE'
           DataSource = DataSourcePadrao
-          TabOrder = 3
+          TabOrder = 4
         end
         object EDPessoa: TDBEdit
           Left = 336
@@ -94,8 +95,11 @@ inherited fManutencaoDoacao: TfManutencaoDoacao
           Width = 154
           Height = 25
           Date = 44714.000000000000000000
-          Time = 0.026922303237370220
-          TabOrder = 4
+          Time = 44714.000000000000000000
+          Color = clBtnFace
+          MaxDate = 2958465.999988426000000000
+          ParentColor = True
+          TabOrder = 3
         end
         object DBCBXStatus: TDBComboBox
           Left = 168
@@ -151,5 +155,33 @@ inherited fManutencaoDoacao: TfManutencaoDoacao
       FieldName = 'PES_NOME'
       Size = 100
     end
+  end
+  object ADOQueryTmp: TADOQuery
+    Connection = Conexao.ADOConnection
+    Parameters = <
+      item
+        Name = 'NOME'
+        Attributes = [paNullable]
+        DataType = ftString
+        NumericScale = 255
+        Precision = 255
+        Size = 100
+        Value = Null
+      end
+      item
+        Name = 'NASCIMENTO'
+        Attributes = [paNullable]
+        DataType = ftDateTime
+        NumericScale = 3
+        Precision = 23
+        Size = 16
+        Value = Null
+      end>
+    SQL.Strings = (
+      'SELECT * FROM BS_PESSOA'
+      'WHERE PES_NOME = :NOME'
+      'AND PES_DATANASC = :NASCIMENTO')
+    Left = 656
+    Top = 48
   end
 end
