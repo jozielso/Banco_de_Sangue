@@ -15,69 +15,85 @@ object fPesquisaPessoa: TfPesquisaPessoa
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object Label1: TLabel
-    Left = 16
-    Top = 24
-    Width = 206
-    Height = 23
-    Caption = 'Digite o nome da Pessoa'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -19
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-  end
-  object EDNomePessoa: TEdit
-    Left = 8
-    Top = 53
-    Width = 321
-    Height = 33
+  object PanelCabecalho: TPanel
+    Left = -2
+    Top = 0
+    Width = 647
+    Height = 106
     TabOrder = 0
-    OnChange = EDNomePessoaChange
+    object Label1: TLabel
+      Left = 16
+      Top = 24
+      Width = 206
+      Height = 23
+      Caption = 'Digite o nome da Pessoa'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object EDNomePessoa: TEdit
+      Left = 8
+      Top = 53
+      Width = 321
+      Height = 21
+      TabOrder = 0
+      OnChange = EDNomePessoaChange
+    end
+    object BitBtnLimpar: TBitBtn
+      Left = 343
+      Top = 53
+      Width = 98
+      Height = 33
+      Caption = 'Limpar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+      OnClick = BitBtnLimparClick
+    end
+    object BitBtnSelecionar: TBitBtn
+      Left = 455
+      Top = 53
+      Width = 98
+      Height = 33
+      Caption = 'Selecionar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 2
+      OnClick = BitBtnSelecionarClick
+    end
   end
-  object BitBtnLimpar: TBitBtn
-    Left = 343
-    Top = 53
-    Width = 98
-    Height = 33
-    Caption = 'Limpar'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -19
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
+  object PanelDetalhe: TPanel
+    Left = 2
+    Top = 106
+    Width = 643
+    Height = 360
+    Caption = 'PanelDetalhe'
     TabOrder = 1
-    OnClick = BitBtnLimparClick
-  end
-  object BitBtnSelecionar: TBitBtn
-    Left = 455
-    Top = 53
-    Width = 98
-    Height = 33
-    Caption = 'Selecionar'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -19
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 2
-    OnClick = BitBtnSelecionarClick
-  end
-  object DBGrid1: TDBGrid
-    Left = 8
-    Top = 120
-    Width = 609
-    Height = 313
-    DataSource = DataSourcePessoa
-    TabOrder = 3
-    TitleFont.Charset = DEFAULT_CHARSET
-    TitleFont.Color = clWindowText
-    TitleFont.Height = -11
-    TitleFont.Name = 'Tahoma'
-    TitleFont.Style = []
+    object DBGrid1: TDBGrid
+      Left = 1
+      Top = 1
+      Width = 641
+      Height = 358
+      Align = alClient
+      DataSource = DataSourcePessoa
+      TabOrder = 0
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'Tahoma'
+      TitleFont.Style = []
+    end
   end
   object ADOQueryPessoa: TADOQuery
     Connection = Conexao.ADOConnection

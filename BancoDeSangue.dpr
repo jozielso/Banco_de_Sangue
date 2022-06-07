@@ -7,7 +7,8 @@ uses
   uCadastroPadrao in 'uCadastroPadrao.pas' {fCadastroPadrao},
   uCadastroPessoa in 'uCadastroPessoa.pas' {fCadastroPessoa},
   uManutencaoDoacao in 'uManutencaoDoacao.pas' {fManutencaoDoacao},
-  uPesquisaPessoa in 'uPesquisaPessoa.pas' {fPesquisaPessoa};
+  uPesquisaPessoa in 'uPesquisaPessoa.pas' {fPesquisaPessoa},
+  uRelatorioDoacao in 'uRelatorioDoacao.pas' {fRelatorioDoacao};
 
 {$R *.res}
 
@@ -20,5 +21,6 @@ begin
   Application.CreateForm(TfCadastroPessoa, fCadastroPessoa);
   Application.CreateForm(TfManutencaoDoacao, fManutencaoDoacao);
   Application.CreateForm(TfPesquisaPessoa, fPesquisaPessoa);
+  Application.CreateForm(TfRelatorioDoacao, fRelatorioDoacao);
   Application.Run;
 end.

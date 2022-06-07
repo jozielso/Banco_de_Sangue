@@ -27,7 +27,7 @@ type
     BitBtnBuscarPessoa: TBitBtn;
     DTPDoacao: TDateTimePicker;
     ADOQueryDoacaoPES_NOME: TStringField;
-    DBComboBox1: TDBComboBox;
+    DBCBXStatus: TDBComboBox;
     procedure FormShow(Sender: TObject);
     procedure BitBtnBuscarPessoaClick(Sender: TObject);
     procedure BitBtnBuscarPessoaExit(Sender: TObject);

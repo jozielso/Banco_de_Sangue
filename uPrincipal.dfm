@@ -44,6 +44,7 @@ object fPrincipal: TfPrincipal
       Caption = 'Relat'#243'rio'
       object smrDoacao: TMenuItem
         Caption = 'Doa'#231#227'o'
+        OnClick = smrDoacaoClick
       end
     end
   end

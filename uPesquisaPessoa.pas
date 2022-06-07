@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Data.DB,
-  Data.Win.ADODB, Vcl.Grids, Vcl.DBGrids;
+  Data.Win.ADODB, Vcl.Grids, Vcl.DBGrids, Vcl.ExtCtrls;
 
 type
   TfPesquisaPessoa = class(TForm)
@@ -23,6 +23,8 @@ type
     ADOQueryPessoaPES_EMAIL: TStringField;
     ADOQueryPessoaPES_CELULAR: TStringField;
     ADOQueryPessoaPES_CPF: TStringField;
+    PanelCabecalho: TPanel;
+    PanelDetalhe: TPanel;
     procedure BitBtnLimparClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure EDNomePessoaChange(Sender: TObject);

@@ -58,7 +58,7 @@ inherited fManutencaoDoacao: TfManutencaoDoacao
           Left = 168
           Top = 240
           Width = 102
-          Height = 18
+          Height = 21
           DataField = 'DOA_QTDE'
           DataSource = DataSourcePadrao
           TabOrder = 3
@@ -97,7 +97,7 @@ inherited fManutencaoDoacao: TfManutencaoDoacao
           Time = 0.026922303237370220
           TabOrder = 4
         end
-        object DBComboBox1: TDBComboBox
+        object DBCBXStatus: TDBComboBox
           Left = 168
           Top = 283
           Width = 145

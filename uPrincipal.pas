@@ -22,6 +22,7 @@ type
     procedure FormShow(Sender: TObject);
     procedure smSairClick(Sender: TObject);
     procedure smDoacaoClick(Sender: TObject);
+    procedure smrDoacaoClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -35,7 +36,7 @@ implementation
 
 {$R *.dfm}
 
-uses DMConexao, uCadastroPessoa, uManutencaoDoacao;
+uses DMConexao, uCadastroPessoa, uManutencaoDoacao, uRelatorioDoacao;
 
 procedure TfPrincipal.FormShow(Sender: TObject);
 begin
@@ -56,6 +57,14 @@ begin
      fCadastroPessoa := TfCadastroPessoa.Create(Application);
      fCadastroPessoa.ShowModal;
      FreeAndNil(fCadastroPessoa);
+end;
+
+procedure TfPrincipal.smrDoacaoClick(Sender: TObject);
+begin
+  if TfRelatorioDoacao(Application.FindComponent('fRelatorioDoacao')) = nil then
+     fRelatorioDoacao := TfRelatorioDoacao.Create(Application);
+     fRelatorioDoacao.ShowModal;
+     FreeAndNil(fRelatorioDoacao);
 end;
 
 procedure TfPrincipal.smSairClick(Sender: TObject);

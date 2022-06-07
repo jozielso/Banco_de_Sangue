@@ -1,0 +1,35 @@
+unit uRelatorioDoacao;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Data.Win.ADODB, Vcl.Grids,
+  Vcl.DBGrids, ppDB, ppDBPipe, ppComm, ppRelatv, ppProd, ppClass, ppReport,
+  Vcl.ExtCtrls;
+
+type
+  TfRelatorioDoacao = class(TForm)
+    ppRRelDoacao: TppReport;
+    ppDBPLRelDoacao: TppDBPipeline;
+    DataSourceRelDoacao: TDataSource;
+    DBGridRelDoacao: TDBGrid;
+    ADOQueryRelDoacao: TADOQuery;
+    PanelCabecalho: TPanel;
+    PanelDetalhe: TPanel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  fRelatorioDoacao: TfRelatorioDoacao;
+
+implementation
+
+{$R *.dfm}
+
+uses DMConexao;
+
+end.
